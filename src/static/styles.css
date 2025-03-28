@@ -41,6 +41,13 @@ main {
   }
 }
 
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
 section {
   background-color: white;
   padding: 20px;
@@ -63,6 +70,11 @@ section h3 {
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f9f9f9;
+  transition: box-shadow 0.2s;
+}
+
+.activity-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .activity-card h4 {
@@ -93,6 +105,13 @@ section h3 {
   font-size: 16px;
 }
 
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #1a237e;
+  box-shadow: 0 0 5px rgba(26, 35, 126, 0.5);
+  outline: none;
+}
+
 button {
   background-color: #1a237e;
   color: white;
@@ -101,11 +120,17 @@ button {
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, transform 0.1s;
 }
 
 button:hover {
   background-color: #3949ab;
+  transform: scale(1.02);
+}
+
+button:focus {
+  outline: 2px solid #3949ab;
+  outline-offset: 2px;
 }
 
 .message {
